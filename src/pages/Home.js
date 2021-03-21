@@ -15,19 +15,22 @@ function Home() {
   const [isOnTouch, setIsOnTouch] = useState(false);
   return (
     <Layout className="container main-layout">
-      <HamMenu
-        onClick={() => setIsOnTouch(!isOnTouch)}
-        isOnTouch={isOnTouch}
-      />
-      <Header className="layout-header">
-        <AppHeader title="NORDIC NEST Shopping Cart"/>
-      </Header>
-      <Content className="layout-content">
-        <ProductList products={products}/>
-      </Content>
-      <Footer className="layout-footer">
-        <AppFooter/>  
-      </Footer>      
+      <NavBar isOnTouch={isOnTouch} />
+      <Layout>
+        <HamMenu
+          onClick={() => setIsOnTouch(!isOnTouch)}
+          isOnTouch={isOnTouch}
+        />
+        <Header className="layout-header">
+          <AppHeader title="NORDIC NEST Shopping Cart"/>
+        </Header>
+        <Content className="layout-content">
+          <ProductList products={products}/>
+        </Content>
+        <Footer className="layout-footer">
+          <AppFooter/>  
+        </Footer>      
+      </Layout>
     </Layout>
   );
 }
